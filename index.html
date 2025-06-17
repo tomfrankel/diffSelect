@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffuser Performance Data</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            background: #3498db;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 0;
+            border-radius: 6px 6px 0 0;
+        }
+        .high-efficiency .section-title {
+            background: #3498db;
+        }
+        .conventional .section-title {
+            background: #27ae60;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #bdc3c7;
+            border-radius: 0 0 6px 6px;
+            overflow: hidden;
+        }
+        th {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 12px 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9em;
+            border-left: 1px solid #bdc3c7;
+            border-right: 1px solid #bdc3c7;
+        }
+        th:first-child { border-left: none; }
+        th:last-child { border-right: none; }
+        td {
+            padding: 10px;
+            text-align: center;
+            border-left: 1px solid #bdc3c7;
+            border-right: 1px solid #bdc3c7;
+            font-size: 0.9em;
+        }
+        td:first-child { border-left: none; }
+        td:last-child { border-right: none; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e3f2fd; }
+        .product-name {
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: left;
+            padding-left: 15px;
+        }
+        .satellite { border-left: 4px solid #06b6d4; }
+        .ecd215 { border-left: 4px solid #3b82f6; }
+        .ect70 { border-left: 4px solid #ef4444; }
+        .afd270 { border-left: 4px solid #10b981; }
+        .afd350 { border-left: 4px solid #8b5cf6; }
+        .afts { border-left: 4px solid #f59e0b; }
+        .sote-high {
+            background: #d4edda;
+            color: #155724;
+            font-weight: 600;
+        }
+        .sote-med {
+            background: #fff3cd;
+            color: #856404;
+            font-weight: 600;
+        }
+        .notes {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .notes h3 {
+            color: #495057;
+            margin-top: 0;
+        }
+        .note-item {
+            margin: 8px 0;
+            color: #6c757d;
+        }
+        .download-note {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 6px;
+            color: #1565c0;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diffuser Performance Data Sheet</h1>
+        
+        <div class="section high-efficiency">
+            <div class="section-title">High Density / Low Flux (HDLF) Applications</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Airflow Range<br>(m³/h)</th>
+                        <th>Airflow Range<br>(SCFM)</th>
+                        <th>SOTE<br>(%/m)</th>
+                        <th>SOTE<br>(%/ft)</th>
+                        <th>SAE<br>(KgO₂/kWh)</th>
+                        <th>Density<br>(%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="satellite">
+                        <td class="product-name">Satellite</td>
+                        <td>0.3 - 1.6</td>
+                        <td>0.2 - 0.9</td>
+                        <td rowspan="3" class="sote-high">7.5 - 9.0</td>
+                        <td rowspan="3" class="sote-high">2.3 - 2.8</td>
+                        <td rowspan="3" class="sote-high">5</td>
+                        <td rowspan="3">20%+</td>
+                    </tr>
+                    <tr class="ecd215">
+                        <td class="product-name">ECD215</td>
+                        <td>0.5 - 1.0</td>
+                        <td>0.3 - 0.6</td>
+                    </tr>
+                    <tr class="ect70">
+                        <td class="product-name">ECT70</td>
+                        <td>1.0 - 1.6</td>
+                        <td>0.6 - 0.9</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section conventional">
+            <div class="section-title">Conventional Design Applications</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Airflow Range<br>(m³/h)</th>
+                        <th>Airflow Range<br>(SCFM)</th>
+                        <th>SOTE<br>(%/m)</th>
+                        <th>SOTE<br>(%/ft)</th>
+                        <th>SAE<br>(KgO₂/kWh)</th>
+                        <th>Density<br>(%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="ect70">
+                        <td class="product-name">ECT70</td>
+                        <td>1.0 - 4.0</td>
+                        <td>0.6 - 2.4</td>
+                        <td rowspan="5" class="sote-med">5.0 - 8.0</td>
+                        <td rowspan="5" class="sote-med">1.5 - 2.4</td>
+                        <td rowspan="5" class="sote-med">4</td>
+                        <td rowspan="5">5% - 15%</td>
+                    </tr>
+                    <tr class="ecd215">
+                        <td class="product-name">ECD215</td>
+                        <td>1.0 - 3.0</td>
+                        <td>0.6 - 1.8</td>
+                    </tr>
+                    <tr class="afd270">
+                        <td class="product-name">AFD270</td>
+                        <td>1.5 - 3.5</td>
+                        <td>0.9 - 2.1</td>
+                    </tr>
+                    <tr class="afd350">
+                        <td class="product-name">AFD350</td>
+                        <td>4.0 - 7.0</td>
+                        <td>2.4 - 4.1</td>
+                    </tr>
+                    <tr class="afts">
+                        <td class="product-name">AFTS</td>
+                        <td>5.0 - 20.0</td>
+                        <td>3.0 - 11.8</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="notes">
+            <h3>Application Guidelines</h3>
+            <div class="note-item">In most cases, customers will come to us asking for a conventional aeration system, unless it is a project driven by energy savings, such as a state funded energy grant, or an ESCO contract where energy savings drive the project. In most cases, we have to present the high efficiency alternative.</div>
+            <div class="note-item"><strong>Power Consumption Reference:</strong> For every 1000 SCFM at 8 PSIG, consider 50 HP or the equivalent in metric values. For HDLF the target is to save 20% of power consumption.</div>
+            <div class="note-item"><strong>Good Candidates for HDLF Upgrade:</strong></div>
+            <div style="margin-left: 20px;">
+                <div class="note-item">• <strong>Complete Mix Reactor:</strong> Single diffuser density of 7-8%. HDLF design at 20-25% density may offer 20% improvement in oxygen transfer efficiency. <em>Recommended product: Satellite</em></div>
+                <div class="note-item">• <strong>BNR with Tapered Aeration:</strong> First aerobic zone not already at 25% density with 9" discs. If at 15-20% density, apply ECD215 which has a slightly higher target airflow range than Satellite. <em>Recommended product: ECD215</em></div>
+            </div>
+            <div class="note-item"><strong>Economics:</strong></div>
+        </div>
+        
+        <div class="calculator" style="background: #f8f9fa; border: 2px solid #dee2e6; border-radius: 12px; padding: 25px; margin-top: 30px;">
+            <h3 style="color: #2c3e50; margin-top: 0; text-align: center;">HDLF Energy Savings Calculator</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 25px;">
+                <div>
+                    <label style="display: block; font-weight: 600; color: #495057; margin-bottom: 8px;">Current Power Consumption:</label>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="number" id="powerInput" placeholder="Enter value" style="flex: 1; padding: 10px; border: 2px solid #ced4da; border-radius: 6px; font-size: 14px;">
+                        <select id="powerUnit" style="padding: 10px; border: 2px solid #ced4da; border-radius: 6px; font-size: 14px;">
+                            <option value="hp">HP</option>
+                            <option value="kw">kW</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label style="display: block; font-weight: 600; color: #495057; margin-bottom: 8px;">Cost per kWh:</label>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span style="font-size: 18px; color: #6c757d;">$</span>
+                        <input type="number" id="costPerKwh" placeholder="0.12" step="0.001" style="flex: 1; padding: 10px; border: 2px solid #ced4da; border-radius: 6px; font-size: 14px;">
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 25px;">
+                <div>
+                    <label style="display: block; font-weight: 600; color: #495057; margin-bottom: 8px;">HDLF Upgrade Cost:</label>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <span style="font-size: 18px; color: #6c757d;">$</span>
+                        <input type="number" id="upgradeCost" placeholder="50000" style="flex: 1; padding: 10px; border: 2px solid #ced4da; border-radius: 6px; font-size: 14px;">
+                    </div>
+                </div>
+                <div>
+                    <label style="display: block; font-weight: 600; color: #495057; margin-bottom: 8px;">Power Savings (%):</label>
+                    <input type="number" id="savingsPercent" value="20" style="width: 100%; padding: 10px; border: 2px solid #ced4da; border-radius: 6px; font-size: 14px;">
+                </div>
+            </div>
+            
+            <button onclick="calculateSavings()" style="width: 100%; padding: 15px; background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 25px;">
+                Calculate Energy Savings
+            </button>
+            
+            <div id="results" style="display: none; background: white; border-radius: 8px; padding: 20px; border: 2px solid #27ae60;">
+                <h4 style="color: #27ae60; margin-top: 0; text-align: center;">Results</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; text-align: center;">
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: #27ae60;" id="annualSavings">-</div>
+                        <div style="color: #6c757d; font-size: 14px;">Annual Savings</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: #27ae60;" id="paybackPeriod">-</div>
+                        <div style="color: #6c757d; font-size: 14px;">Payback Period</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: #27ae60;" id="powerSaved">-</div>
+                        <div style="color: #6c757d; font-size: 14px;">Power Saved (kW)</div>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; padding: 10px; background: #f8f9fa; border-radius: 6px; font-size: 12px; color: #6c757d; text-align: center;">
+                    Assumes 24/7/365 operation. Does not consider inflation in power costs or cost of money.
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+
+    <script>
+        function calculateSavings() {
+            const powerInput = parseFloat(document.getElementById('powerInput').value);
+            const powerUnit = document.getElementById('powerUnit').value;
+            const costPerKwh = parseFloat(document.getElementById('costPerKwh').value);
+            const upgradeCost = parseFloat(document.getElementById('upgradeCost').value);
+            const savingsPercent = parseFloat(document.getElementById('savingsPercent').value);
+            
+            if (!powerInput || !costPerKwh || !upgradeCost || !savingsPercent) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Convert HP to kW if necessary
+            let powerKw = powerInput;
+            if (powerUnit === 'hp') {
+                powerKw = powerInput * 0.746; // 1 HP = 0.746 kW
+            }
+            
+            // Calculate power saved
+            const powerSavedKw = powerKw * (savingsPercent / 100);
+            
+            // Calculate annual energy savings (kWh)
+            const hoursPerYear = 24 * 365; // 8760 hours
+            const annualEnergySaved = powerSavedKw * hoursPerYear;
+            
+            // Calculate annual cost savings
+            const annualSavingsDollars = annualEnergySaved * costPerKwh;
+            
+            // Calculate payback period
+            let paybackYears = Infinity;
+            if (annualSavingsDollars > 0) {
+                paybackYears = upgradeCost / annualSavingsDollars;
+            }
+            
+            // Display results
+            document.getElementById('annualSavings').textContent = '$' + annualSavingsDollars.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            document.getElementById('paybackPeriod').textContent = isFinite(paybackYears) ? paybackYears.toFixed(1) + ' years' : 'N/A';
+            document.getElementById('powerSaved').textContent = powerSavedKw.toFixed(1) + ' kW';
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
